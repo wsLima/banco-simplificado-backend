@@ -1,13 +1,15 @@
 package br.com.wslima.backend.domain.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import br.com.wslima.backend.commons.enums.UserType;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Entity
+@Data
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue
@@ -16,6 +18,7 @@ public class User {
     private String cpfCnpj;
     private String email;
     private String password;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
     private BigDecimal balance;
 }
