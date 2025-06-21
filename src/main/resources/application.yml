@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: banco-simplificado-backend
+  profiles:
+    active: dev
